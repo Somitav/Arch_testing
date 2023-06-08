@@ -1,0 +1,9 @@
+{
+	"name": "DevAccreAdf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "bc80ff19-81e5-413d-8dac-eb53c3e7d22f",
+		"tenantId": "8ed6c75c-1934-4a22-ae5c-64b145e244db"
+	}
+}
