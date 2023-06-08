@@ -1,0 +1,9 @@
+{
+	"name": "dev-arch-2",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f397ac65-a9a1-4df9-976d-dcc750563b0a",
+		"tenantId": "8ed6c75c-1934-4a22-ae5c-64b145e244db"
+	}
+}
