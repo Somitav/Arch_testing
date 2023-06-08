@@ -1,67 +1,11 @@
 {
-	"name": "DEV_copy_Accre",
+	"name": "script_test",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy Accreditation_raw",
-				"type": "Copy",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
-					},
-					"sink": {
-						"type": "SnowflakeSink",
-						"preCopyScript": {
-							"value": "truncate table \"DEV_DB\".\"ACCREDITATION_SC\".\"ACCREDITATION\" ;",
-							"type": "Expression"
-						},
-						"importSettings": {
-							"type": "SnowflakeImportCopyCommand"
-						}
-					},
-					"enableStaging": false
-				},
-				"inputs": [
-					{
-						"referenceName": "accreditation_source",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "sink_sf_accre",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
 				"name": "Script1",
 				"type": "Script",
-				"dependsOn": [
-					{
-						"activity": "Copy Accreditation_raw",
-						"dependencyConditions": [
-							"Completed"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -88,8 +32,6 @@
 				}
 			}
 		],
-		"annotations": [],
-		"lastPublishTime": "2023-06-08T05:59:41Z"
-	},
-	"type": "Microsoft.DataFactory/factories/pipelines"
+		"annotations": []
+	}
 }
