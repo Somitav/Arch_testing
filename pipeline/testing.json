@@ -49,7 +49,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "accreditation_source",
+						"referenceName": "accree_in_coff",
 						"type": "DatasetReference"
 					}
 				],

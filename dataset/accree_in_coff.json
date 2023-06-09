@@ -1,5 +1,5 @@
 {
-	"name": "accreditation_source",
+	"name": "accree_in_coff",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "link_source_1",
@@ -11,10 +11,9 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "raw_accreditation.csv",
-				"container": "source"
+				"container": "new-accre"
 			},
 			"columnDelimiter": ",",
-			"rowDelimiter": "\r\n",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
@@ -69,6 +68,5 @@
 				"type": "String"
 			}
 		]
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+	}
 }
