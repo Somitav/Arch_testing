@@ -408,6 +408,83 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/accree_in_coff')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "link_source_1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "raw_accreditation.csv",
+						"container": "new-accre"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "StandardSetName",
+						"type": "String"
+					},
+					{
+						"name": "Region",
+						"type": "String"
+					},
+					{
+						"name": "CountryName",
+						"type": "String"
+					},
+					{
+						"name": "VisitStartDate",
+						"type": "String"
+					},
+					{
+						"name": "VisitEndDate",
+						"type": "String"
+					},
+					{
+						"name": "StandardCheckID",
+						"type": "String"
+					},
+					{
+						"name": "Name",
+						"type": "String"
+					},
+					{
+						"name": "StageName",
+						"type": "String"
+					},
+					{
+						"name": "Answer",
+						"type": "String"
+					},
+					{
+						"name": "Reviewed",
+						"type": "String"
+					},
+					{
+						"name": "MoreInformationRequired",
+						"type": "String"
+					},
+					{
+						"name": "Accredited",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/link_source_1')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/accree_in_coffee')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -576,83 +653,6 @@
 				}
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/accree_in_coff')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "link_source_1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"fileName": "raw_accreditation.csv",
-						"container": "new-accre"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "StandardSetName",
-						"type": "String"
-					},
-					{
-						"name": "Region",
-						"type": "String"
-					},
-					{
-						"name": "CountryName",
-						"type": "String"
-					},
-					{
-						"name": "VisitStartDate",
-						"type": "String"
-					},
-					{
-						"name": "VisitEndDate",
-						"type": "String"
-					},
-					{
-						"name": "StandardCheckID",
-						"type": "String"
-					},
-					{
-						"name": "Name",
-						"type": "String"
-					},
-					{
-						"name": "StageName",
-						"type": "String"
-					},
-					{
-						"name": "Answer",
-						"type": "String"
-					},
-					{
-						"name": "Reviewed",
-						"type": "String"
-					},
-					{
-						"name": "MoreInformationRequired",
-						"type": "String"
-					},
-					{
-						"name": "Accredited",
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/link_source_1')]"
-			]
 		}
 	]
 }
